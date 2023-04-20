@@ -16,6 +16,17 @@ void create(int num)
     tam++;
     printf("\ninserido\n\n");
 };
+void deletar(int num)
+{
+	int i;
+    for (i = tam; i > 0 && num == vtr[i - 1]; i--)
+    {
+        vtr[i] = vtr[i - 1];
+    }
+    vtr[i] = num;
+    tam++;
+    printf("\Removido\n\n");
+};
 int main()
 {
 	int num;
@@ -30,20 +41,24 @@ int main()
         scanf("%d", &num);
         printf("\n");
         create(num);
-        for (int x = 0; x <= tam - 1; x++)
+        break;
+    case 2:
+        for (int x = 0; x <= tam; x++)
         {
             printf("%d;", vtr[x]);
         }
         printf("\n");
         break;
-    case 2:
 
         break;
     case 3:
 
         break;
     case 4:
-
+    	printf("\nDigite o num a ser add: ");
+        scanf("%d", &num);
+        printf("\n");
+        deletar(num);
         break;
     }
 }
